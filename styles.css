@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #container {
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: darkslategray;
+    outline: 8px solid #044c44;
+    display: grid;
+    grid-template-columns:
+      [col-start] 1fr
+      [col-2] 1fr [col-3] 1fr [col-end];
+    grid-auto-rows: 100px auto 80px;
+    grid-template-areas:
+      "header header header"
+      "sidebar main main"
+      "footer footer footer";
+  }
+  
+  .header {
+    grid-area: header;
+    position: fixed;
+    z-index: 1000;
+    outline: 8px solid #044c44;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .header h1 {
+    height: 30px;
+    padding: 30px;
+    margin: 0;
+    background-image: linear-gradient(#06352d, #084d36, #0b3e3d, #427063);
+    color: white;
+    font-size: 25px;
+    font-family: DM Sans, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 5px 3px 2px black;
+  }
+  
+  .main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(justify - 60px);
+    padding-top: 30px; /* Space for fixed header */
+    padding-bottom: 30px; /* Space for fixed footer */
+    overflow-y: scroll;
+    font-family: DM Sans, sans-serif;
+    font-weight: bold;
+    background-color: darkslategray;
+    text-align: left;
+  }
+  
+  .content-box {
+    padding: 70px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 100%;
+    background-color: lightgrey;
+    color: #340303;
+    text-align: left;
+    font-size: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .content-box:hover {
+    background-color: #05273c;
+    color: #e8ead9;
+  }
+  
+  .content-box select,
+  .content-box form {
+    width: 260px;
+  }
+  
+  .content-box form output {
+    display: flex;
+  }
+  
+  .content-box p {
+    padding: 15px;
+    background-color: #043f4c;
+    color: white;
+  }
+  
+  .content-box output {
+    padding: 10px;
+    background-color: #043f4c;
+    color: white;
+  }
+  
+  .content-box ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .content-box li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .content-box label {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .content-box input,
+  .content-box output {
+    flex: 1;
+    padding: 5px;
+    margin-left: 10px;
+  }
+  
+  #earned,
+  #total {
+    height: 20px;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+    padding: 0px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    font-family: DM Sans, sans-serif;
+    font-weight: bold;
+    background-color: darkgrey;
+    color: #340303;
+  }
+  
+  .sidebar h2 {
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    font-size: 20px;
+    background-color: white;
+  }
+  
+  .sidebar p {
+    padding: 15px;
+    margin: 15px;
+    text-align: left;
+    font-size: 15px;
+    background-color: white;
+  }
+  
+  .sidebar .graph {
+    padding: 10px;
+    text-align: center;
+    animation: moveAndRotate 2s ease-in-out 1 forwards;
+  }
+  
+  @keyframes moveAndRotate {
+    0% {
+      transform: translateX(-200%) rotate(0deg); /* Start off-screen to the left */
+    }
+    100% {
+      transform: translateX(0) rotate(360deg); /* End at the final position, rotated */
+    }
+  }
+  
+  .footer {
+    grid-area: footer;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    z-index: 1000;
+    background-color: darkolivegreen;
+    padding: 25px;
+    margin: 0;
+    color: black;
+    font-size: 15px;
+    font-family: DM Sans, sans-serif;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .sidebar {
+      width: 100%;
+    }
+    .sidebar h2 {
+      padding: 15px;
+      margin: 15px;
+      text-align: center;
+      font-size: 20px;
+      background-color: white;
+      box-sizing: border-box;
+      overflow-wrap: break-word;
+    }
+  
+    .sidebar p {
+      padding: 15px;
+      margin: 15px;
+      text-align: left;
+      font-size: 15px;
+      background-color: white;
+      box-sizing: border-box;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+  }
+  

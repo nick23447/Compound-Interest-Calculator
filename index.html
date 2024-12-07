@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Compound Interest Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+  </style>
+  <body>
+    <div id="container">
+      <div class="item header">
+        <h1>Finding Compound Interest</h1>
+      </div>
+      <div class="item main">
+        <div class="content-box">
+          <p>Fill out the boxes to see how much your money will grow!</p>
+          <br />
+          <ul>
+            <li>
+              <label for="principal">Principal (p): $</label>
+              <input id="principal" type="number" />
+            </li>
+            <li>
+              <label for="interest">Interest Rate (r): %</label>
+              <form>
+                <input
+                  type="range"
+                  id="interest"
+                  min="0.25"
+                  max="50"
+                  value="2.5"
+                  step="0.25"
+                />
+                <output id="interestText">2.5</output>
+              </form>
+            </li>
+            <li>
+              <label for="compound"
+                >Number of times interest applied per time period (n):
+              </label>
+              <select id="compound">
+                <option value="360">daily</option>
+                <option value="12">monthly</option>
+                <option value="4">quarterly</option>
+                <option value="1">yearly</option>
+              </select>
+            </li>
+            <li>
+              <label for="time">Time (t in years):</label>
+              <input id="time" type="number" />
+            </li>
+            <li>
+              <label>Total Amount: $</label>
+              <output id="total"></output>
+            </li>
+            <li>
+              <label>Amount Earned: $</label>
+              <output id="earned"></output>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="item sidebar">
+        <h2>Welcome to the Compound Interest Calculator!</h2>
+        <p>
+          What does it do? :<br /><br />
+          Determines how much your money can grow using the power of compound
+          interest.
+        </p>
+        <p>
+          The Formula: <br />
+          <br />
+          A = P(1 + (r/n))^n*t
+        </p>
+        <p>Here's a cool visual!</p>
+        <p class="graph">
+          <img
+            src="https://www.investopedia.com/thmb/CDbXPBrKleGi76g91C1-GyHRP2U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/COMPOUNDINTERESTFINALJPEGcopy-f248781269194135aa6044e088de7af9.jpg"
+            width="400"
+            height="280"
+            alt="Graph showing compound interest growth over time"
+          />
+        </p>
+      </div>
+      <div class="item footer">
+        <a
+          href="https://codesandbox.io/p/sandbox/compound-interest-draft-fnkx9y"
+          >Source Code</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
